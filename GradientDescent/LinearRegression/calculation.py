@@ -2,19 +2,17 @@ import numpy as np
 from gd import gradientdescent
 
 # Coursera fun Homework problem
-# Prediction of house-prices based on some features
-data = np.array([[2104,1416, 852],\
-                 [5,3,2],\
-                 [1,2,1],\
-                 [45,40,35],\
-                 [460,232,178]])
+x = np.random.rand(5,6)
+y = np.array([[0,1,0,1,0]])
+data = np.hstack((x, y.T))
 
-# Initial guesses
-w0 = np.zeros((4))
-b0 = 0.0
-GD = gradientdescent(data, w0, b0, alpha=5*(10**-7),\
-                     plot=False, verbose=True)  
-# Does not converge
+w0 = np.random.rand(x.shape[1]).reshape(-1,)-0.5
+b0 = 0.5
+Lambda = 0.001
+epsilon=10**-6
+GD = gradientdescent(data, w0, b0, alpha=1*(10**-3),\
+                     regularize=False, Lambda=Lambda,\
+                     epsilon=epsilon, plot=False, verbose=True)  
+## Does not converge
 w, b = GD.get_gd()
 GD.compare(w, b)
-
