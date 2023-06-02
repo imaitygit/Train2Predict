@@ -1,7 +1,6 @@
 # *Machine Learning*
 
 ## Supervised Machine Learning: Regression and Classification
-#-----------------------------------------------------------
 
 1. ([Linear Regression](./GradientDescent/LinearRegression))
 Basic implementation of gradient descent with linear regression
@@ -12,7 +11,6 @@ Basic implementation of gradient descent with logistic regression
 for multiple variables.
 
 ## Advanced Learning Algorithms: Neural Networks
-#----------------------------------------------
 
 3. ([NN with Tensorflow](./NeuralNetwork/CoffeeRoasting))
 Neural network to find out optimal coffee roast with Tensorflow
