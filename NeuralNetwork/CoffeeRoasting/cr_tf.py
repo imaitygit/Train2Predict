@@ -15,7 +15,9 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from cr_aux import *
 
-
+#-----------
+# DATA
+#----------
 # Load data
 x, y = load_coffee_data()
 #plot_roast(x, y)
@@ -36,6 +38,9 @@ xtiled = np.tile(xn, (1000,1))
 ytiled = np.tile(y, (1000,1))
 
 
+#---------
+# Model
+#---------
 #Setting global seed: different results for every call to the random op, 
 #but the same sequence for every re-run of the program 
 tf.random.set_seed(1234)  # applied to achieve consistent results
@@ -47,30 +52,40 @@ model = Sequential(
       Dense(1, activation='sigmoid', name = 'layer2')
    ]
 )
-
 # Take a look at the summary
 model.summary()
-
 # Take a look at w, b
 W1, b1 = model.get_layer("layer1").get_weights()
 W2, b2 = model.get_layer("layer2").get_weights()
 print(f"W1{W1.shape}:\n", W1, f"\nb1{b1.shape}:", b1)
 print(f"W2{W2.shape}:\n", W2, f"\nb2{b2.shape}:", b2)
 
+
+# --------------
+# Loss function
+# -------------
 # Loss function and fits
 model.compile(
     loss = tf.keras.losses.BinaryCrossentropy(),
     optimizer = tf.keras.optimizers.Adam(learning_rate=0.01),
 )
+
+# -----------------
+# Optimization
+#------------------
+
 model.fit(
     xtiled,ytiled,            
     epochs=10,
 )
-
 # Set the W, b parameters
 model.get_layer("layer1").set_weights([W1,b1])
 model.get_layer("layer2").set_weights([W2,b2])
 
+
+#-------------------
+# Prediction
+#-------------------
 # Test the predictions
 x_test = np.array([
     [200,13.9],  # postive example
