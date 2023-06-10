@@ -8,3 +8,5 @@ $$H(p_1) = -p_1 \text{log}_2(p_1) - (1- p_1) \text{log}_2(1- p_1)$$
 
 log here is defined to be in base 2. 
 
+We will also utilize *one-hot encoding* to represent the categorical values. 
+
