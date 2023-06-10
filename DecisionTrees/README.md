@@ -1,5 +1,4 @@
 # Example of figuring out if some animal is cat or not
-#-----------------------------------------------------
 
 *Information gain*
 
