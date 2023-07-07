@@ -1,4 +1,8 @@
-# *Machine Learning*
+# *My journey to Artificial Intelligence*
+
+I will document all the exercises and projects while learning
+AI. 
+
 
 ## Supervised Machine Learning: Regression and Classification
 
@@ -15,4 +19,6 @@ for multiple variables.
 3. ([NN with Tensorflow](./NeuralNetwork/CoffeeRoasting))
 Neural network to find out optimal coffee roast with Tensorflow
 and a python implementation. 
- 
+
+
+## Kaggle tasks 
