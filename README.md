@@ -3,8 +3,7 @@
 I will document all the exercises and projects while learning
 AI. 
 
-#Coursera
-#=======
+# Coursera
 
 ## Supervised Machine Learning: Regression and Classification
 
@@ -24,7 +23,6 @@ and a python implementation.
 
 
 # Kaggle
-#========
 
 ## Courses and Projects
 
